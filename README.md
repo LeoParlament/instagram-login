@@ -1,1 +1,101 @@
 # instagram-login
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Instagram Login</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fafafa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .box {
+      background: white;
+      border: 1px solid #dbdbdb;
+      padding: 40px 30px;
+      width: 350px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: #262626;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      font-size: 14px;
+      border: 1px solid #dbdbdb;
+      border-radius: 3px;
+      background-color: #ffffff;
+      color: #000000; /* Чёрный текст при вводе */
+    }
+
+    input::placeholder {
+      color: #999; /* Серый текст для подсказки */
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #3897f0;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .message {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #000000; /* Чёрный цвет вывода */
+      background-color: #ffffff; /* Белый фон */
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      min-height: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <div class="logo">Instagram</div>
+    <form onsubmit="showData(); return false;">
+      <input type="text" id="login" placeholder="Логин или email" />
+      <input type="password" id="pass" placeholder="Пароль" />
+      <button type="submit">Войти</button>
+    </form>
+    <div class="message" id="message">Введи логин и пароль</div>
+  </div>
+
+  <script>
+    function showData() {
+      const login = document.getElementById("login").value.trim();
+      const pass = document.getElementById("pass").value.trim();
+      const msg = document.getElementById("message");
+
+      if (login === "" || pass === "") {
+        msg.innerHTML = "Пожалуйста, введи логин и пароль";
+      } else {
+        msg.innerHTML = "<b>Логин:</b> " + login + "<br><b>Пароль:</b> " + pass;
+      }
+    }
+  </script>
+
+</body>
+</html>
